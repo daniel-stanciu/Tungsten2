@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\DataContainers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\PlatformTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\MemoryCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\SpriteCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\SpriteFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\DirectXTK\WICTextureLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\DirectXTK\PlatformHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\D3DRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\ServiceLocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\IGraphicsService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\IConfigurationService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateMachine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMainMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\SpriteBatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\SpriteTextService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\InputService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OBJparser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\DirectXTK\dds.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tungsten\DirectXTK\DDSTextureLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Argash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\DataContainers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\PlatformTools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\SpriteCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\SpriteFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\DirectXTK\WICTextureLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\D3DRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\ServiceLocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateMachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMainMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\SpriteBatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\SpriteTextService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\InputService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OBJparser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tungsten\DirectXTK\DDSTextureLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Argash.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Argash.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\Fonts\Arial.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\Textures\box.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\Textures\background.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\Textures\cursors.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\Textures\null.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\terrain-texture.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\Textures\water.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\Textures\dessert.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\Textures\A6M_ZERO_D.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\Textures\rotor.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\Textures\soldier.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\Textures\heli_base.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\SkyMap.dds" />
+    <Image Include="Data\Textures\SkyBoxTex.dds" />
+    <Image Include="Data\Textures\grass.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Data\Textures\imnotboxsky.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.cfg" />
+    <None Include="Argash.aps" />
+    <None Include="Data\Fonts\Arial.bfd" />
+    <None Include="Data\untitled.obj" />
+    <None Include="Data\Models\broken.obj" />
+    <None Include="Data\Models\terrain.obj" />
+    <None Include="Data\Models\plane.obj" />
+    <None Include="Data\Models\rear_rotor.obj" />
+    <None Include="Data\Models\rotor.obj" />
+    <None Include="Data\Models\heli_base.obj" />
+    <None Include="Data\Models\soldier.obj" />
+    <None Include="Data\Models\cube.obj" />
+    <None Include="Data\Models\billboard.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Data\Shaders\PSSpriteRender.hlsl" />
+    <FxCompile Include="Data\Shaders\VSSpriteRender.hlsl" />
+    <FxCompile Include="Data\Shaders\PSSimpleModel.hlsl" />
+    <FxCompile Include="Data\Shaders\VSSimpleModel.hlsl" />
+    <FxCompile Include="Data\Shaders\PSSkyBox.hlsl" />
+    <FxCompile Include="Data\Shaders\VSSkyBox.hlsl" />
+    <FxCompile Include="Data\Shaders\PSInstancedGrass.hlsl" />
+    <FxCompile Include="Data\Shaders\VSInstancedGrass.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <MeshContentTask Include="Data\Models\castle01.obj" />
+  </ItemGroup>
+</Project>

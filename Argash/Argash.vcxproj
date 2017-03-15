@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A75AEB07-8F47-43CE-86BC-FEDB68EC399E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Argash</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d2d1.lib;dxgi.lib;d3d11.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>robocopy "$(ProjectDir)  " "$(TargetDir)   " "config.cfg"
+robocopy "$(ProjectDir)/Data" "$(TargetDir)/Data" /E
+@echo off
+setlocal enabledelayedexpansion
+set filename=version.h
+if exist "%filename%.temp" del "%filename%.temp"
+for /f "tokens=1-3 delims= " %%A in (version.h) do (
+	if "%%B"=="VERSION_BUILD_NUMBER" (
+		set num=%%C
+		set /a num+=1
+		echo READ:  %%A %%B            %%C
+		echo WRITE: %%A %%B            !num!
+		echo.
+		echo %%A %%B            !num!&gt;&gt;"%filename%.temp" 
+		)
+	if "%%B"=="VERSION_MINOR_NUMBER" (
+		echo READ:  %%A %%B            %%C
+		echo WRITE: %%A %%B            %%C
+		echo.
+		echo %%A %%B            %%C&gt;&gt;"%filename%.temp"  
+		)	
+	if "%%B"=="VERSION_MAJOR_NUMBER" (
+		echo READ:  %%A %%B            %%C
+		echo WRITE: %%A %%B            %%C
+		echo.
+		echo %%A %%B            %%C&gt;&gt;"%filename%.temp"  
+		)
+	if "%%B"=="VERSION_RELEASE_NUMBER" (
+		echo READ:  %%A %%B            %%C
+		echo WRITE: %%A %%B            %%C
+		echo.
+		echo %%A %%B            %%C&gt;&gt;"%filename%.temp"  
+		)	
+	)
+del "%filename%"
+ren "%filename%.temp" "%filename%"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="ConfigManager.h" />
+    <ClInclude Include="GameStateMachine.h" />
+    <ClInclude Include="IGameState.h" />
+    <ClInclude Include="OBJparser.h" />
+    <ClInclude Include="Tungsten\DirectXTK\dds.h" />
+    <ClInclude Include="Tungsten\DirectXTK\DDSTextureLoader.h" />
+    <ClInclude Include="Tungsten\InputService.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Tungsten\SpriteBatch.h" />
+    <ClInclude Include="StateMainMenu.h" />
+    <ClInclude Include="Tungsten\IConfigurationService.h" />
+    <ClInclude Include="Tungsten\IGraphicsService.h" />
+    <ClInclude Include="Tungsten\ServiceLocator.h" />
+    <ClInclude Include="Tungsten\SpriteTextService.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Tungsten\Camera.h" />
+    <ClInclude Include="Tungsten\DataContainers.h" />
+    <ClInclude Include="Tungsten\MemoryCache.h" />
+    <ClInclude Include="Tungsten\DirectXTK\PlatformHelpers.h" />
+    <ClInclude Include="Tungsten\PlatformTools.h" />
+    <ClInclude Include="Tungsten\D3DRenderer.h" />
+    <ClInclude Include="Tungsten\Sprite.h" />
+    <ClInclude Include="Tungsten\SpriteCache.h" />
+    <ClInclude Include="Tungsten\SpriteFactory.h" />
+    <ClInclude Include="Tungsten\Timer.h" />
+    <ClInclude Include="Tungsten\DirectXTK\WICTextureLoader.h" />
+    <ClInclude Include="Tungsten\Vector.h" />
+    <ClInclude Include="version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Argash.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="ConfigManager.cpp" />
+    <ClCompile Include="GameStateMachine.cpp" />
+    <ClCompile Include="OBJparser.cpp" />
+    <ClCompile Include="Tungsten\DirectXTK\DDSTextureLoader.cpp" />
+    <ClCompile Include="Tungsten\InputService.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Tungsten\SpriteBatch.cpp" />
+    <ClCompile Include="StateMainMenu.cpp" />
+    <ClCompile Include="Tungsten\ServiceLocator.cpp" />
+    <ClCompile Include="Tungsten\SpriteTextService.cpp" />
+    <ClCompile Include="Tungsten\Camera.cpp" />
+    <ClCompile Include="Tungsten\DataContainers.cpp" />
+    <ClCompile Include="Tungsten\PlatformTools.cpp" />
+    <ClCompile Include="Tungsten\D3DRenderer.cpp" />
+    <ClCompile Include="Tungsten\Sprite.cpp" />
+    <ClCompile Include="Tungsten\SpriteCache.cpp" />
+    <ClCompile Include="Tungsten\SpriteFactory.cpp" />
+    <ClCompile Include="Tungsten\Timer.cpp" />
+    <ClCompile Include="Tungsten\DirectXTK\WICTextureLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Argash.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Argash.ico" />
+    <Image Include="Data\SkyMap.dds" />
+    <Image Include="Data\Textures\grass.jpg" />
+    <Image Include="Data\Textures\imnotboxsky.dds" />
+    <Image Include="Data\Textures\SkyBoxTex.dds" />
+    <Image Include="Data\Textures\soldier.png" />
+    <Image Include="Data\Textures\A6M_ZERO_D.png" />
+    <Image Include="Data\Textures\heli_base.png" />
+    <Image Include="Data\Textures\dessert.jpg" />
+    <Image Include="Data\Fonts\Arial.png" />
+    <Image Include="Data\Textures\rotor.jpg" />
+    <Image Include="Data\Textures\water.jpg" />
+    <Image Include="Data\terrain-texture.jpg" />
+    <Image Include="Data\Textures\cursors.png" />
+    <Image Include="Data\Textures\background.jpg" />
+    <Image Include="Data\Textures\box.png" />
+    <Image Include="Data\Textures\null.png" />
+    <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Argash.aps" />
+    <None Include="config.cfg">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+    </None>
+    <None Include="Data\Fonts\Arial.bfd" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Data\Shaders\PSInstancedGrass.hlsl">
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/Data/Shaders/%(Filename).cso</ObjectFileOutput>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Data\Shaders\PSSimpleModel.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/Data/Shaders/%(Filename).cso</ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="Data\Shaders\PSSkyBox.hlsl">
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/Data/Shaders/%(Filename).cso</ObjectFileOutput>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Data\Shaders\PSSpriteRender.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/Data/Shaders/%(Filename).cso</ObjectFileOutput>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Data\Shaders\VSInstancedGrass.hlsl">
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/Data/Shaders/%(Filename).cso</ObjectFileOutput>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Data\Shaders\VSSimpleModel.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/Data/Shaders/%(Filename).cso</ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="Data\Shaders\VSSkyBox.hlsl">
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/Data/Shaders/%(Filename).cso</ObjectFileOutput>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Data\Shaders\VSSpriteRender.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)\Data\Shaders\%(Filename).cso</ObjectFileOutput>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MeshContentTask Include="Data\Models\castle01.obj">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+    </MeshContentTask>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Models\plane.obj">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\untitled.obj">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Models\broken.obj">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Models\terrain.obj">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Models\soldier.obj">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Models\heli_base.obj">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="Data\Models\rear_rotor.obj">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="Data\Models\rotor.obj">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Models\cube.obj">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Models\billboard.obj">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
