@@ -1,22 +1,9 @@
 #pragma once
 #include "pch.h"
+#include "ConfigurationState.h"
 namespace Tungsten
 {
-struct ConfigurationState
-{
-	enum windowedState
-	{
-		yes,
-		no,
-		borderless
-	} windowed;
-	struct
-	{
-		int height;
-		int width;
-	} resolution;
 
-};
 
 class IConfigurationService
 {

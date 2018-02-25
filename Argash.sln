@@ -1,29 +1,42 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Argash", "Argash\Argash.vcxproj", "{A75AEB07-8F47-43CE-86BC-FEDB68EC399E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6177030B-0516-43DC-B286-E11A106DA549} = {6177030B-0516-43DC-B286-E11A106DA549}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TungstenLib", "TungstenLib\TungstenLib.vcxproj", "{6177030B-0516-43DC-B286-E11A106DA549}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://taikand.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Argash\\Argash.vcxproj
-		SccProjectName1 = Argash
-		SccLocalPath1 = Argash
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
 		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A75AEB07-8F47-43CE-86BC-FEDB68EC399E}.Debug|Win32.ActiveCfg = Debug|Win32
 		{A75AEB07-8F47-43CE-86BC-FEDB68EC399E}.Debug|Win32.Build.0 = Debug|Win32
+		{A75AEB07-8F47-43CE-86BC-FEDB68EC399E}.Debug|x64.ActiveCfg = Debug|Win32
 		{A75AEB07-8F47-43CE-86BC-FEDB68EC399E}.Release|Win32.ActiveCfg = Release|Win32
 		{A75AEB07-8F47-43CE-86BC-FEDB68EC399E}.Release|Win32.Build.0 = Release|Win32
+		{A75AEB07-8F47-43CE-86BC-FEDB68EC399E}.Release|x64.ActiveCfg = Release|Win32
+		{6177030B-0516-43DC-B286-E11A106DA549}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6177030B-0516-43DC-B286-E11A106DA549}.Debug|Win32.Build.0 = Debug|Win32
+		{6177030B-0516-43DC-B286-E11A106DA549}.Debug|x64.ActiveCfg = Debug|x64
+		{6177030B-0516-43DC-B286-E11A106DA549}.Debug|x64.Build.0 = Debug|x64
+		{6177030B-0516-43DC-B286-E11A106DA549}.Release|Win32.ActiveCfg = Release|Win32
+		{6177030B-0516-43DC-B286-E11A106DA549}.Release|Win32.Build.0 = Release|Win32
+		{6177030B-0516-43DC-B286-E11A106DA549}.Release|x64.ActiveCfg = Release|x64
+		{6177030B-0516-43DC-B286-E11A106DA549}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98678F32-9174-4A40-B34D-2539DB916D61}
 	EndGlobalSection
 EndGlobal

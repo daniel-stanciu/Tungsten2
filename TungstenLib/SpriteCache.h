@@ -3,7 +3,7 @@
 #include <list>
 #include "MemoryCache.h"
 #include "Sprite.h"
-#include "Tungsten\DataContainers.h"
+#include "DataContainers.h"
 
 /*
 

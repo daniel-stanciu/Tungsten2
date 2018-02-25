@@ -63,14 +63,14 @@ namespace Tungsten
 				 Windows::UI::Xaml::Controls::SwapChainBackgroundPanel^		m_swapChain);
 	#endif
 	#if defined WIN32
-		D3DRenderer::D3DRenderer(HWND	h_window);
+		D3DRenderer(HWND	h_window);
 	#endif
 		//IGraphicsService interface
 		virtual void	Refresh() ;
 		virtual void	SetBuffers(MemoryBlock vertexData,MemoryBlock indexData, MemoryBlock constantData=MemoryBlock::Null());
 		virtual void	DrawIndexed(UINT IndexCount,UINT StartIndexLocation,INT BaseVertexLocation);
 		virtual void	SetTexture(Texture);
-		virtual Texture LoadTexture(WCHAR* filepath);
+		virtual Texture LoadTexture(const WCHAR* filepath);
 		virtual void	Present();
 		virtual void	SetState(GraphicsState);
 		virtual void	SetConstantBufferVS(MemoryBlock buffer,int index);

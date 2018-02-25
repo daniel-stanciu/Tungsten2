@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -18,18 +18,19 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccLocalPath>SAK</SccLocalPath>
     <SccProvider>SAK</SccProvider>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -125,39 +126,16 @@ ren "%filename%.temp" "%filename%"</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="ConfigManager.h" />
     <ClInclude Include="GameStateMachine.h" />
     <ClInclude Include="IGameState.h" />
     <ClInclude Include="OBJparser.h" />
-    <ClInclude Include="Tungsten\DirectXTK\dds.h" />
-    <ClInclude Include="Tungsten\DirectXTK\DDSTextureLoader.h" />
-    <ClInclude Include="Tungsten\InputService.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Tungsten\SpriteBatch.h" />
     <ClInclude Include="StateMainMenu.h" />
-    <ClInclude Include="Tungsten\IConfigurationService.h" />
-    <ClInclude Include="Tungsten\IGraphicsService.h" />
-    <ClInclude Include="Tungsten\ServiceLocator.h" />
-    <ClInclude Include="Tungsten\SpriteTextService.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Tungsten\Camera.h" />
-    <ClInclude Include="Tungsten\DataContainers.h" />
-    <ClInclude Include="Tungsten\MemoryCache.h" />
-    <ClInclude Include="Tungsten\DirectXTK\PlatformHelpers.h" />
-    <ClInclude Include="Tungsten\PlatformTools.h" />
-    <ClInclude Include="Tungsten\D3DRenderer.h" />
-    <ClInclude Include="Tungsten\Sprite.h" />
-    <ClInclude Include="Tungsten\SpriteCache.h" />
-    <ClInclude Include="Tungsten\SpriteFactory.h" />
-    <ClInclude Include="Tungsten\Timer.h" />
-    <ClInclude Include="Tungsten\DirectXTK\WICTextureLoader.h" />
-    <ClInclude Include="Tungsten\Vector.h" />
     <ClInclude Include="version.h" />
   </ItemGroup>
   <ItemGroup>
@@ -166,31 +144,18 @@ ren "%filename%.temp" "%filename%"</Command>
     <ClCompile Include="ConfigManager.cpp" />
     <ClCompile Include="GameStateMachine.cpp" />
     <ClCompile Include="OBJparser.cpp" />
-    <ClCompile Include="Tungsten\DirectXTK\DDSTextureLoader.cpp" />
-    <ClCompile Include="Tungsten\InputService.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Tungsten\SpriteBatch.cpp" />
     <ClCompile Include="StateMainMenu.cpp" />
-    <ClCompile Include="Tungsten\ServiceLocator.cpp" />
-    <ClCompile Include="Tungsten\SpriteTextService.cpp" />
-    <ClCompile Include="Tungsten\Camera.cpp" />
-    <ClCompile Include="Tungsten\DataContainers.cpp" />
-    <ClCompile Include="Tungsten\PlatformTools.cpp" />
-    <ClCompile Include="Tungsten\D3DRenderer.cpp" />
-    <ClCompile Include="Tungsten\Sprite.cpp" />
-    <ClCompile Include="Tungsten\SpriteCache.cpp" />
-    <ClCompile Include="Tungsten\SpriteFactory.cpp" />
-    <ClCompile Include="Tungsten\Timer.cpp" />
-    <ClCompile Include="Tungsten\DirectXTK\WICTextureLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Argash.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Argash.ico" />
+    <Image Include="Data\cube.jpg" />
     <Image Include="Data\SkyMap.dds" />
     <Image Include="Data\Textures\grass.jpg" />
     <Image Include="Data\Textures\imnotboxsky.dds" />
@@ -312,6 +277,14 @@ ren "%filename%.temp" "%filename%"</Command>
     <None Include="Data\Models\billboard.obj">
       <FileType>Document</FileType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Data\cube.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TungstenLib\TungstenLib.vcxproj">
+      <Project>{6177030b-0516-43dc-b286-e11a106da549}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

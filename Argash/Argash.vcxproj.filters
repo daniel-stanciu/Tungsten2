@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -30,52 +27,10 @@
     <ClInclude Include="Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tungsten\DataContainers.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\PlatformTools.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="version.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tungsten\MemoryCache.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\Timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\Sprite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\SpriteCache.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\SpriteFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\DirectXTK\WICTextureLoader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\DirectXTK\PlatformHelpers.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\D3DRenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\ServiceLocator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\IGraphicsService.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ConfigManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\IConfigurationService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameStateMachine.h">
@@ -87,28 +42,10 @@
     <ClInclude Include="StateMainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tungsten\SpriteBatch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\SpriteTextService.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\InputService.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\Vector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OBJparser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\DirectXTK\dds.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tungsten\DirectXTK\DDSTextureLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -117,36 +54,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tungsten\DataContainers.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tungsten\PlatformTools.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tungsten\Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tungsten\Sprite.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tungsten\SpriteCache.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tungsten\SpriteFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tungsten\Camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tungsten\DirectXTK\WICTextureLoader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tungsten\D3DRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tungsten\ServiceLocator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ConfigManager.cpp">
@@ -158,22 +65,10 @@
     <ClCompile Include="StateMainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tungsten\SpriteBatch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tungsten\SpriteTextService.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tungsten\InputService.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="OBJparser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tungsten\DirectXTK\DDSTextureLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -231,6 +126,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Data\Textures\imnotboxsky.dds" />
+    <Image Include="Data\cube.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <None Include="config.cfg" />
@@ -259,5 +157,8 @@
   </ItemGroup>
   <ItemGroup>
     <MeshContentTask Include="Data\Models\castle01.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Data\cube.obj" />
   </ItemGroup>
 </Project>

@@ -11,13 +11,13 @@ namespace Tungsten
 	{
 		
 		//Get content of file as array of bytes
-		HRESULT CreateByteCodeFromFile(WCHAR* filename,MemoryBlock* block);
+		HRESULT CreateByteCodeFromFile(const WCHAR* filename,MemoryBlock* block);
 		//Get content of file as string buffer
-		HRESULT CreateStringBufferFromFile(WCHAR* filename,::std::stringstream** p_stringBuff);
+		HRESULT CreateStringBufferFromFile(const WCHAR* filename,::std::stringstream** p_stringBuff);
 
-		HRESULT DecodePixelsFromFile(WCHAR* filename,MemoryBlock* block);
+		HRESULT DecodePixelsFromFile(const WCHAR* filename,MemoryBlock* block);
 
-		HANDLE CreateFileHandle(WCHAR* filename,int desiredAcces);
+		HANDLE CreateFileHandle(const WCHAR* filename,int desiredAcces);
 		inline void PostError(WCHAR* message=NULL)
 		{
 			DWORD error=GetLastError();

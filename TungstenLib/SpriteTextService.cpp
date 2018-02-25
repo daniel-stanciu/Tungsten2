@@ -4,7 +4,7 @@
 
 using namespace Tungsten;
 using namespace DirectX;
-SpriteFont SpriteTextService::LoadSpriteFont(WCHAR* binaryPath,WCHAR* texturePath)
+SpriteFont SpriteTextService::LoadSpriteFont(const WCHAR* binaryPath, const WCHAR* texturePath)
 {
 
 	SpriteFont pointer=new tag_SpriteFont;

@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include <Tungsten\DataContainers.h>
+#include "DataContainers.h"
 #include "MemoryCache.h"
 #include "Vector.h"
 namespace Tungsten {

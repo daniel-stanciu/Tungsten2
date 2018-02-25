@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "D3DRenderer.h"
-#include "Tungsten\DirectXTK\DDSTextureLoader.h"
+#include "DirectXTK\DDSTextureLoader.h"
 using namespace DirectX;
 using namespace Tungsten;
 using namespace Tungsten::PlatformTools;
@@ -512,7 +512,7 @@ void D3DRenderer::SetTexture(Texture texture)
 	g_pContext->PSSetShaderResources(0,1,&texture.shaderView);
 }
 
-Texture D3DRenderer::LoadTexture(WCHAR* filepath)
+Texture D3DRenderer::LoadTexture(const WCHAR* filepath)
 {
 	Texture ret;
 	CreateWICTextureFromFile(this->g_pd3dDevice,this->g_pContext,filepath,&ret.resource,&ret.shaderView);

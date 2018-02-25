@@ -3,7 +3,7 @@
 
 using namespace Tungsten;
 using namespace Tungsten::PlatformTools;
-HRESULT Tungsten::PlatformTools::CreateByteCodeFromFile(WCHAR* filename,MemoryBlock* block)
+HRESULT Tungsten::PlatformTools::CreateByteCodeFromFile(const WCHAR* filename,MemoryBlock* block)
 {
 	HANDLE file;
 	file=CreateFileHandle(filename,FileAccess::Read);
@@ -41,7 +41,7 @@ HRESULT Tungsten::PlatformTools::CreateByteCodeFromFile(WCHAR* filename,MemoryBl
 	return S_OK;
 }
 
-HRESULT Tungsten::PlatformTools::CreateStringBufferFromFile(WCHAR* filename, _Out_ std::stringstream** p_stringBuff)
+HRESULT Tungsten::PlatformTools::CreateStringBufferFromFile(const WCHAR* filename, _Out_ std::stringstream** p_stringBuff)
 {
 
 	HANDLE file;
@@ -89,7 +89,7 @@ HRESULT Tungsten::PlatformTools::CreateStringBufferFromFile(WCHAR* filename, _Ou
 	return S_OK;
 }
 
- HANDLE Tungsten::PlatformTools::CreateFileHandle(WCHAR* filename,int desiredAcces)
+ HANDLE Tungsten::PlatformTools::CreateFileHandle(const WCHAR* filename,int desiredAcces)
 {
 	
 	//Win32 Implementation
@@ -200,7 +200,7 @@ HRESULT Tungsten::PlatformTools::CreateStringBufferFromFile(WCHAR* filename, _Ou
 	*/
 }
 
-HRESULT Tungsten::PlatformTools::DecodePixelsFromFile(WCHAR* filename,MemoryBlock* block)
+HRESULT Tungsten::PlatformTools::DecodePixelsFromFile(const WCHAR* filename,MemoryBlock* block)
 {
 	//TODO : Make more general
 

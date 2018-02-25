@@ -25,7 +25,7 @@ enum GraphicsState
 class IGraphicsService
 {
 public:
-	virtual Texture LoadTexture(WCHAR* )=0;	
+	virtual Texture LoadTexture(const WCHAR* )=0;	
 	virtual Texture	LoadSkyMap()=0;
 	virtual void	DrawInstanced(MemoryBlock vertexData,MemoryBlock indexData,MemoryBlock instanceData)=0;
 	virtual void	Refresh()=0;

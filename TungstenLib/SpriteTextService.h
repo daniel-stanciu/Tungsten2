@@ -35,7 +35,7 @@ public:
 	//Allignment refers to an offset from the side of the screen.
 	void	DrawString(Vector<2,float>& cursor,float size,SpriteFont font,char* string,float allign=0.0f);
 	void	DrawStringCentered(Vector<2,float> center,float size,SpriteFont font,char* string);
-	static SpriteFont LoadSpriteFont(WCHAR* binaryPath,WCHAR* texturePath);
+	static SpriteFont LoadSpriteFont(const WCHAR* binaryPath,const WCHAR* texturePath);
 	void DebugWrite(char* text);
 	void DebugClear();
 };

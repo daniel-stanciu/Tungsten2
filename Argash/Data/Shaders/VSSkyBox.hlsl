@@ -1,4 +1,4 @@
-cbuffer PerObject : register(c0)
+cbuffer PerObject : register(b0)
 {
 	matrix transform;
 };
