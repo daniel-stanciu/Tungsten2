@@ -23,6 +23,7 @@ Output main(Input input )
 	Output output;
 	float4x4 transform=mul(viewMatrix,worldMatrix);
 	output.position= mul(transform,input.position);
+	
 	output.texCoords=input.texCoords;
 	output.normal=mul(worldMatrix,input.normal);
 	output.normal=normalize(output.normal);

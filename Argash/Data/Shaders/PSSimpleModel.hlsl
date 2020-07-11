@@ -3,15 +3,14 @@ Texture2D tex : register (t0);
 cbuffer ParallelLight : register(b0)
 {
 	float3 pDirection;
+	float _pad;
 	float3 pDiffuse;
+	float _pad2;
 	float3 pAmbient;
+	float _pad3;
+	float3 _pad4;
 };
-cbuffer PointLight : register(b1)
-{
-	float3 direction;
-	float3 diffuse;
-	float3 ambient;
-};
+
 float3 Parallel(float3 color,float3 normal)
 {
 	float3 litColor=pAmbient*color;

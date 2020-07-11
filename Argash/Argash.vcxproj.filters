@@ -30,9 +30,6 @@
     <ClInclude Include="version.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ConfigManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameStateMachine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -45,7 +42,7 @@
     <ClInclude Include="Button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OBJparser.h">
+    <ClInclude Include="TungstenWin32\TungstenWin32Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -54,9 +51,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ConfigManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameStateMachine.cpp">
@@ -68,7 +62,7 @@
     <ClCompile Include="Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OBJparser.cpp">
+    <ClCompile Include="TungstenWin32\TungstenWin32Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -159,6 +153,6 @@
     <MeshContentTask Include="Data\Models\castle01.obj" />
   </ItemGroup>
   <ItemGroup>
-    <Object Include="Data\cube.obj" />
+    <Media Include="Data\cube.obj" />
   </ItemGroup>
 </Project>

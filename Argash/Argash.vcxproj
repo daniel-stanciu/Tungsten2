@@ -128,27 +128,25 @@ ren "%filename%.temp" "%filename%"</Command>
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="Button.h" />
-    <ClInclude Include="ConfigManager.h" />
     <ClInclude Include="GameStateMachine.h" />
     <ClInclude Include="IGameState.h" />
-    <ClInclude Include="OBJparser.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="StateMainMenu.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TungstenWin32\TungstenWin32Renderer.h" />
     <ClInclude Include="version.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Argash.cpp" />
     <ClCompile Include="Button.cpp" />
-    <ClCompile Include="ConfigManager.cpp" />
     <ClCompile Include="GameStateMachine.cpp" />
-    <ClCompile Include="OBJparser.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="StateMainMenu.cpp" />
+    <ClCompile Include="TungstenWin32\TungstenWin32Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Argash.rc" />
@@ -279,7 +277,10 @@ ren "%filename%.temp" "%filename%"</Command>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Object Include="Data\cube.obj" />
+    <Media Include="Data\cube.obj">
+      <FileType>Document</FileType>
+      <SubType>Designer</SubType>
+    </Media>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TungstenLib\TungstenLib.vcxproj">

@@ -1,0 +1,111 @@
+﻿<Window x:Class="TungstenClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TungstenClient"
+        xmlns:interop="clr-namespace:System.Windows.Interop;assembly=PresentationFramework"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="300"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Loaded="Window_Loaded">
+    <StackPanel >
+        <TabControl>
+            <TabItem Header="Transformation">
+                <StackPanel>
+                    <GroupBox Header="Rotation">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="x:"/>
+                            <Slider Grid.Column="1" Grid.Row="0" Value="{Binding Mesh.RotationX}" ></Slider>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="y:"/>
+                            <Slider Grid.Column="1" Grid.Row="1" Value="{Binding Mesh.RotationY}"></Slider>
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="z:"/>
+                            <Slider Grid.Column="1" Grid.Row="2" Value="{Binding Mesh.RotationZ}"></Slider>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Scaling">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="x:"/>
+                            <Slider Grid.Column="1" Grid.Row="0" Value="{Binding Mesh.ScalingX}" Minimum="0.1" Maximum="5"></Slider>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="y:"/>
+                            <Slider Grid.Column="1" Grid.Row="1" Value="{Binding Mesh.ScalingY}" Minimum="0.1" Maximum="5"></Slider>
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="z:"/>
+                            <Slider Grid.Column="1" Grid.Row="2" Value="{Binding Mesh.ScalingZ}" Minimum="0.1" Maximum="5"></Slider>
+                        </Grid>
+
+                    </GroupBox>
+                    <GroupBox Header="Position">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="x:"/>
+                            <Slider Grid.Column="1" Grid.Row="0" Value="{Binding Mesh.PositionX}"></Slider>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="y:"/>
+                            <Slider Grid.Column="1" Grid.Row="1" Value="{Binding Mesh.PositionY}"></Slider>
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="z:"/>
+                            <Slider Grid.Column="1" Grid.Row="2" Value="{Binding Mesh.PositionZ}"></Slider>
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Light">
+                <StackPanel>
+                    <GroupBox Header="Diffuse Color">
+                        <xctk:ColorPicker SelectedColor="{Binding DiffuseColor}" ></xctk:ColorPicker>
+                    </GroupBox>
+                    <GroupBox Header="AmbientColor">
+                        <xctk:ColorPicker SelectedColor="{Binding AmbientColor,UpdateSourceTrigger=PropertyChanged}"></xctk:ColorPicker>
+                    </GroupBox>
+                    <GroupBox Header="Light source direction">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="x:"/>
+                            <Slider Grid.Column="1" Grid.Row="0" Value="{Binding Light.DirectionX}"></Slider>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="y:"/>
+                            <Slider Grid.Column="1" Grid.Row="1" Value="{Binding Light.DirectionY}"></Slider>
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="z:"/>
+                            <Slider Grid.Column="1" Grid.Row="2" Value="{Binding Light.DirectionZ}"></Slider>
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        <!--<Image Grid.Row ="1" x:Name="renderImage" HorizontalAlignment="Left" Height="100" Margin="273,94,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.983,0.697"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="74,288,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        --><!--<local:NativeWindow x:Name="NativeWindow" Margin="160,111,244,0" VerticalAlignment="Top" Width="600" Height="300"></local:NativeWindow>-->
+       
+    </StackPanel>
+</Window>
